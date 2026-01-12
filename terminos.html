@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyDev | Soluciones de Software Innovadoras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .hero-bg {
+            background-color: #0d1117;
+            background-image: linear-gradient(180deg, rgba(13, 17, 23, 1) 0%, rgba(20, 30, 48, 1) 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <script>
+        function smoothScroll(targetId) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            }
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    smoothScroll(this.getAttribute('href').substring(1));
+                });
+            });
+        });
+    </script>
+
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm shadow-lg border-b border-blue-800/20">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#inicio" class="text-2xl font-bold text-white tracking-widest">
+                    Sky<span class="text-blue-400">Dev</span>
+                </a>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#inicio" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">Inicio</a>
+                    <a href="#servicios" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">Servicios</a>
+                    <a href="#privacidad" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">Privacidad</a>
+                    <a href="#terminos" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">Términos</a>
+                    <a href="#contacto" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium text-blue-400 border border-blue-400 rounded-lg ml-2">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-bg min-h-[70vh] flex items-center justify-center text-center p-8">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl font-extrabold text-white mb-6">Términos y Políticas de <span class="text-blue-400">SkyDev</span></h1>
+                <p class="text-xl text-gray-400">Documentación legal para la transparencia y cumplimiento de servicios digitales.</p>
+            </div>
+        </section>
+
+        <section id="privacidad" class="py-16 bg-gray-900 border-t border-gray-800">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-blue-500 pl-4">Política de Privacidad</h2>
+                <div class="space-y-6 text-gray-400">
+                    <p>En <strong>SkyDev</strong>, valoramos su privacidad. Esta política detalla cómo manejamos los datos en relación con la <strong>API de WhatsApp Business</strong> de Meta.</p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li><strong>Recopilación:</strong> Solo almacenamos datos necesarios para la mensajería (números y estados de envío).</li>
+                        <li><strong>Uso:</strong> Los datos se usan para automatizar respuestas y gestionar la comunicación comercial.</li>
+                        <li><strong>Seguridad:</strong> Implementamos cifrado en el tránsito de datos entre nuestros servidores y los de Meta.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="terminos" class="py-16 bg-gray-800 border-t border-gray-700">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-cyan-500 pl-4">Términos y Condiciones de Uso</h2>
+                <div class="bg-gray-900 p-8 rounded-xl shadow-lg space-y-6 text-gray-400 text-sm">
+                    <div>
+                        <h3 class="text-white font-bold mb-2">1. Aceptación de los Términos</h3>
+                        <p>Al utilizar nuestros servicios de integración de software, el usuario acepta cumplir con estos términos y con las <strong>Políticas Comerciales de WhatsApp</strong>.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-2">2. Uso Permitido</h3>
+                        <p>Queda prohibido el uso de nuestras herramientas para el envío de spam, contenido ilegal, fraudulento o que vulnere los derechos de propiedad intelectual de terceros.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-2">3. Responsabilidad del Usuario</h3>
+                        <p>El cliente es el único responsable del contenido de los mensajes enviados a través de la API y de obtener el consentimiento previo (Opt-in) de los destinatarios.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-2">4. Limitación de Responsabilidad</h3>
+                        <p>SkyDev no se hace responsable por suspensiones de cuenta realizadas por Meta debido al mal uso de las políticas de la plataforma de WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-16 bg-gray-900 border-t border-gray-800">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-2xl font-bold text-white mb-4">¿Dudas legales o técnicas?</h2>
+                <p class="mb-6">Escríbenos a: <span class="text-blue-400 font-mono">davidcarrildev45@gmail.com</span></p>
+                <a href="mailto:davidcarrildev45@gmail.com" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Enviar Correo</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-950 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-xs text-gray-600">&copy; 2026 SkyDev. Cumplimiento de Políticas de Desarrollador de Meta.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="#privacidad" class="text-xs text-gray-500 hover:underline">Privacidad</a>
+                <a href="#terminos" class="text-xs text-gray-500 hover:underline">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
